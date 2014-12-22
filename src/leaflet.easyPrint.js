@@ -2,7 +2,7 @@
 
 L.Control.EasyPrint = L.Control.extend({
     options: {
-        position: 'topleft',
+        position: 'left',
         title: 'Print map',
     },
 
