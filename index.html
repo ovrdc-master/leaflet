@@ -48,9 +48,10 @@
 	//map.fitBounds(points.getBounds());
 	
 	var county = L.geoJson(adamscounty,{
-                color: 'white',
+                color: 'grey',
                 weight: 2,
                 opacity: .7,
+                fill: false
                 //dashArray: '20,15',
                 //lineJoin: 'round'
 	}).addTo(map);
