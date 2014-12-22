@@ -89,15 +89,14 @@
 			defaultExtentControl: true
 		});
 	
-	var beerIcon = L.MakiMarkers.icon({
-	 	icon: "beer",
-		color: "#12a",
-    		size: "l"
-	});
+//	var beerIcon = L.MakiMarkers.icon({
+//	 	icon: "beer",
+//		color: "#12a",
+//    		size: "l"
+//	});
 	
 	var points = L.geoJson(poi,{
-			icon: beerIcon,
-//			onEachFeature: popup
+		onEachFeature: popup
 	}).addTo(map);
 
 	//map.fitBounds(points.getBounds());
