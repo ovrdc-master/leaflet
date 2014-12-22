@@ -90,13 +90,13 @@
 	
 	var beerIcon = L.MakiMarkers.icon({
 	 	icon: "beer",
-		 color: "#12a",
+		color: "#12a",
     		size: "l"
 	});
 	
 	var points = L.geoJson(poi,{
-			onEachFeature: popup,
-			icon: beer
+			icon: beer,
+			onEachFeature: popup
 	}).addTo(map);
 
 	//map.fitBounds(points.getBounds());
