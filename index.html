@@ -104,7 +104,7 @@
 	
 	var points = L.geoJson(poi,{
 		pointToLayer: function (feature, latlng) {
-            		return L.marker(latlng, {icon: redMarker}
+            		return L.AwesomeMarkers.icon(latlng, {icon: redMarker}
 		}
 	//	onEachFeature: popup
 	}).addTo(map);
