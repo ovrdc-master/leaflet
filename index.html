@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="poi.js" type="text/javascript"></script>
+  <script src="adamscounty.js" type="text/javascript"></script>
 
   <style>
   	  #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -44,7 +45,15 @@
 			onEachFeature: popup
 	}).addTo(map);
 
-	//map.fitBounds(poi.getBounds());
+	//map.fitBounds(points.getBounds());
+	
+	var county = L.geoJson(adamscounty,{
+                color: 'white',
+                weight: 2,
+                opacity: .7,
+                //dashArray: '20,15',
+                //lineJoin: 'round'
+	}).addTo(map);
 	
 	var baseMaps = {
 		"Basemap": Esri_WorldTopoMap,
