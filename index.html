@@ -103,10 +103,10 @@
   	});
 	
 	var points = L.geoJson(poi,{
-		pointToLayer: function (feature, latlng) {
-            		return L.AwesomeMarkers.icon(latlng, {icon: redMarker})
-		}
-	//	onEachFeature: popup
+	//	pointToLayer: function (feature, latlng) {
+        //    		return L.AwesomeMarkers.icon(latlng, {icon: redMarker})
+	//	}
+		onEachFeature: popup
 	}).addTo(map);
 
 	//map.fitBounds(points.getBounds());
