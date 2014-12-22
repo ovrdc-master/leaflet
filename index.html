@@ -96,7 +96,7 @@
 	
 	var points = L.geoJson(poi,{
 			icon: beerIcon,
-			onEachFeature: popup
+//			onEachFeature: popup
 	}).addTo(map);
 
 	//map.fitBounds(points.getBounds());
@@ -114,6 +114,7 @@
 		"Basemap": Esri_WorldTopoMap,
 		"Imagery": Esri_WorldImagery
 	};
+
 	var overlayMaps = {
 		 "Points of Interest": points
 	};
