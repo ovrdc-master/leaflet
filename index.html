@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="src/leaflet-sidebar.css" />
   <script src="src/leaflet-sidebar.js"></script>
   <script src="src/leaflet.makimarkers.js"></script>
+  <link rel="stylesheet" href="src/leaflet.awesome-markers.css">
+  <script src="src/leaflet.awesome-markers.js"></script>
 
   <style>
   	  #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -95,8 +97,14 @@
 //    		size: "l"
 //	});
 	
+	var redMarker = L.AwesomeMarkers.icon({
+    		icon: 'fa-coffee',
+    		markerColor: 'red'
+  	});
+	
 	var points = L.geoJson(poi,{
-		onEachFeature: popup
+		icon: redMarker
+	//	onEachFeature: popup
 	}).addTo(map);
 
 	//map.fitBounds(points.getBounds());
