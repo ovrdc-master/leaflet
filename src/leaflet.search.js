@@ -1,7 +1,7 @@
 /*
  * Leaflet Geocoding plugin that look good.
  */
-L.Control.Search = L.Control.extend({
+L.Control.search = L.Control.extend({
 	options: {
 		position: 'topleft',
 		title: 'Nominatim Search',
@@ -116,5 +116,5 @@ L.Control.Search = L.Control.extend({
 });
 
 L.control.search = function( options ) {
-	return new L.Control.Search(options);
+	return new L.Control.search(options);
 };
