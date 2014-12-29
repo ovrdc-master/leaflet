@@ -160,14 +160,20 @@
 	};
 
 	var overlayMaps = {
-		 "Quilt Barns": qbarns,
+		 <i class="fa fa-star" style="color:red">"Quilt Barns"</i>: qbarns,
 		 "Other":	otherpoi
 	};
 	
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
-	L.control.layers(baseMaps, overlayMaps).addTo(map);
+	
+	L.control.layers(baseMaps, overlayMaps, {
+		collapsed:false
+	}).addTo(map);
+	
 	L.control.locate().addTo(map);
+	
 	L.easyPrint().addTo(map);
+	
 	//L.control.search().addTo(map);
 	
 
