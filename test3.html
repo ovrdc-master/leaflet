@@ -76,15 +76,6 @@
     	
     });
     
-    function popup(feature, layer) {
-		if (feature.properties && feature.properties.NAME) {
-			layer.bindPopup( '<b>' +feature.properties.NAME + '</b>' + '<br>' +feature.properties.CATEGORY);
-		}
-		else if (feature.properties && feature.properties.CATEGORY) {
-			layer.bindPopup(feature.properties.CATEGORY);
-		}
-	};
-   
     var map = L.map('map', {center: [38.809365, -83.517054],
 			zoom: 11,
 			layers: [Esri_WorldTopoMap],
@@ -97,15 +88,24 @@
 //    		size: "l"
 //	});
 	
-	var redMarker = L.AwesomeMarkers.icon({
-    		icon: 'coffee',
-    		markerColor: 'red'
-  	});
+	function popup(feature, layer) {
+		if (feature.properties && feature.properties.NAME) {
+			layer.bindPopup( '<b>' +feature.properties.NAME + '</b>' + '<br>' +feature.properties.CATEGORY);
+		}
+		else if (feature.properties && feature.properties.CATEGORY) {
+			layer.bindPopup(feature.properties.CATEGORY);
+		}
+	};
+	
+	//var redMarker = L.AwesomeMarkers.icon({
+    	//	icon: 'coffee',
+    //		markerColor: 'red'
+ // 	});
 	
 	var qbarns = L.geoJson(poi,{
-		{ filter: function(feature, layer) {
+		 filter: function(feature, layer) {
 			return feature.properties.Category == "Quilt Barns";
-		}}
+		},
 		
 	//	pointToLayer: function (feature, latlng) {
         //    		return L.AwesomeMarkers.icon(latlng, {icon: redMarker})
@@ -114,9 +114,9 @@
 	}).addTo(map);
 
 	var otherpoi = L.geoJson(poi,{
-		{ filter: function(feature, layer) {
+		 filter: function(feature, layer) {
 			return feature.properties.Category != "Quilt Barns";
-		}}
+		},
 		
 	//	pointToLayer: function (feature, latlng) {
         //    		return L.AwesomeMarkers.icon(latlng, {icon: redMarker})
@@ -124,9 +124,9 @@
 		onEachFeature: popup
 	}).addTo(map);
 
-	map.fitBounds(poi.getBounds(), {
-		padding: [50, 50]
-	});
+//	map.fitBounds(poi.getBounds(), {
+//		padding: [50, 50]
+//	});
 	
 	var county = L.geoJson(adamscounty,{
                 color: 'grey',
