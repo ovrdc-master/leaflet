@@ -89,12 +89,6 @@
 			defaultExtentControl: true
 		});
 	
-//	var beerIcon = L.MakiMarkers.icon({
-//	 	icon: "beer",
-//		color: "#12a",
-//    		size: "l"
-//	});
-	
 	function popup(feature, layer) {
 		if (feature.properties && feature.properties.NAME) {
 			layer.bindPopup( '<b>' +feature.properties.NAME + '</b>' + '<br>' +feature.properties.CATEGORY);
@@ -104,14 +98,19 @@
 		}
 	};
 	
-	//var redMarker = L.AwesomeMarkers.icon({
-    	//	icon: 'coffee',
-    //		markerColor: 'red'
- // 	});
-	
+	var starIcon = L.AwesomeMarkers.icon({
+    		prefix: 'fa', //font awesome rather than bootstrap
+    		markerColor: 'red', // see colors above
+		icon: 'star' //http://fortawesome.github.io/Font-Awesome/icons/
+	});
 	var qbarns = L.geoJson(poi,{
 		 filter: function(feature, layer) {
 			return feature.properties.CATEGORY == "Quilt Barns";
+		},
+		pointToLayer: function(feature, latlng) {
+			return L.marker(latlng, {
+				icon: starIcon
+			})
 		},
 		
 	//	pointToLayer: function (feature, latlng) {
