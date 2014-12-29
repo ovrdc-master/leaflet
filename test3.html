@@ -104,7 +104,7 @@
 	
 	var qbarns = L.geoJson(poi,{
 		 filter: function(feature, layer) {
-			return feature.properties.Category == "Quilt Barns";
+			return feature.properties.CATEGORY == "Quilt Barns";
 		},
 		
 	//	pointToLayer: function (feature, latlng) {
@@ -115,7 +115,7 @@
 
 	var otherpoi = L.geoJson(poi,{
 		 filter: function(feature, layer) {
-			return feature.properties.Category != "Quilt Barns";
+			return feature.properties.CATEGORY != "Quilt Barns";
 		},
 		
 	//	pointToLayer: function (feature, latlng) {
