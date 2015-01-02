@@ -14,12 +14,10 @@
   <script src="src/leaflet.defaultextent.js"></script>
 
   <link rel="stylesheet" href="src/easyPrint.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="src/jQuery.print.js"></script>
   <script src="src/leaflet.easyPrint.js"></script>
     
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  
-  <script src="src/jQuery.print.js"></script>
-  
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css' rel='stylesheet' />
 	<!--[if lt IE 9]>
@@ -184,7 +182,7 @@
 	
 	L.control.locate().addTo(map);
 	
-	//L.easyPrint().addTo(map);
+	L.easyPrint().addTo(map);
 	
 	//L.control.search().addTo(map);
 	
