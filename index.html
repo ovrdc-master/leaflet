@@ -135,7 +135,7 @@
 	};
 	
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
-	L.control.layers(baseMaps, overlayMaps).addTo(map);
+	L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 	L.control.locate().addTo(map);
 	L.easyPrint().addTo(map);
 	//L.control.search().addTo(map);
