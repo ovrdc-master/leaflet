@@ -120,6 +120,10 @@
                 //lineJoin: 'round'
 	}).addTo(map);
 	
+	var oldmap = L.imageOverlay('map1975-1.jpg', [[38.550307, -83.750016], [39.126144, -83.213472]])
+    	;
+
+	
 	var baseMaps = {
 		"Basemap": Esri_WorldTopoMap,
 		"Imagery": Esri_WorldImagery
@@ -127,6 +131,7 @@
 
 	var overlayMaps = {
 		 "Points of Interest": points
+		 "1975 Tourism Map": oldmap
 	};
 	
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
