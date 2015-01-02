@@ -21,7 +21,7 @@
 			showResultIcons: false,
 			collapsed: true,
 			expand: 'click',
-			position: 'topright',
+			position: 'topleft',
 			placeholder: 'Search...',
 			errorMessage: 'Nothing found.'
 		},
