@@ -35,6 +35,9 @@
   
   <link rel="stylesheet" href="src/Control.Geocoder.css" />
   <script src="src/Control.Geocoder.js"></script>
+  
+  <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.css" />
+  <script src="src/leaflet.groupedlayercontrol.js"></script>
 
   <style>
   	  #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -165,21 +168,33 @@
 		"Imagery": Esri_WorldImagery
 	};
 
-	var overlayMaps = {
+//	var overlayMaps = {
+//		 "Quilt Barns": qbarns,
+//		 "Other":	otherpoi,
+//		 "1975 Tourism Map": oldmap
+//	};
+
+	var groupedOverlays = {
+		 "Points of Interest" : {
 		 "Quilt Barns": qbarns,
-		 "Other":	otherpoi,
+		 "Other":	otherpoi
+		 },
+		 "Other": {
 		 "1975 Tourism Map": oldmap
+		 }
 	};
-	
+
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
 
 	L.Control.geocoder().addTo(map);
 	
-	L.control.layers(baseMaps, overlayMaps, {
-		collapsed:false,
-		opacity: .7
-	}).addTo(map);
-	
+//	L.control.layers(baseMaps, overlayMaps, {
+//		collapsed:false,
+//		opacity: .7
+//	}).addTo(map);
+
+	L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+		
 	L.control.locate().addTo(map);
 	
 	//L.easyPrint().addTo(map);
