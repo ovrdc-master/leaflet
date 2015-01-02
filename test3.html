@@ -173,7 +173,8 @@
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
 	
 	L.control.layers(baseMaps, overlayMaps, {
-		collapsed:false
+		collapsed:false,
+		opacity: .7
 	}).addTo(map);
 	
 	L.control.locate().addTo(map);
