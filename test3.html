@@ -156,6 +156,9 @@
                 //lineJoin: 'round'
 	}).addTo(map);
 	
+	var oldmap = L.imageOverlay('map1975-1.jpg', [[38.550974, -83.752114], [39.125732, -83.212542]], {opacity: 0.5})
+    	;
+	
 	var baseMaps = {
 		"Basemap": Esri_WorldTopoMap,
 		"Imagery": Esri_WorldImagery
@@ -163,7 +166,8 @@
 
 	var overlayMaps = {
 		 "Quilt Barns": qbarns,
-		 "Other":	otherpoi
+		 "Other":	otherpoi,
+		 "1975 Tourism Map": oldmap
 	};
 	
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
