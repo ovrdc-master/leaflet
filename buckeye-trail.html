@@ -59,7 +59,6 @@
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
 	};
 	
-	var sidebar = L.control.sidebar('sidebar').addTo(map);
 	L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 	L.control.locate().addTo(map);
 	L.easyPrint().addTo(map);
