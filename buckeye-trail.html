@@ -29,7 +29,17 @@
   
 
   <style>
-  	  #map { position:absolute; top:0; bottom:0; width:100%; }
+  	#map { position:absolute; top:0; bottom:0; width:100%; }
+	#footer {
+	      position:absolute;
+	      bottom:0px;
+	      left:0px;
+	      right:0px;
+	      z-index:999;
+	      overflow:auto;
+	      padding:5px;
+	      opacity:0.8;
+	      }
   </style>
 </head>
 <body>
@@ -37,6 +47,9 @@
 
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
   <div id="map"></div>
+	 <div id="footer">
+       		<img src="trails-legend.png" alt="trails" style="width:100px">
+	</div>
   <script>
   window.onload = function () {
   
