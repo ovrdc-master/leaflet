@@ -102,14 +102,16 @@
 	var overlayMaps = {
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
 	};
-	
+
+	map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+
 	L.control.layers(baseMaps).addTo(map);
 	L.control.defaultExtent().addTo(map);
 	L.control.locate().addTo(map);
 	L.easyPrint().addTo(map);
 	L.Control.geocoder().addTo(map);
 //	L.control.search().addTo(map);
-	map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+
 	
 
 }
