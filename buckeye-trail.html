@@ -46,7 +46,7 @@
  
 	var map = L.map('map');
 
-	var trail = omnivore.geojson('btrail.geojson')
+	var runLayer = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
         }).addTo(map);
