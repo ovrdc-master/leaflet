@@ -25,7 +25,7 @@
   <script src="src/leaflet.makimarkers.js"></script>
   <link rel="stylesheet" href="src/leaflet.awesome-markers.css">
   <script src="src/leaflet.awesome-markers.js"></script>
-  <script src="buckeye-trail.geojson" type="text/javascript"></script>
+  <script src="btrail.geojson" type="text/javascript"></script>
 
   <style>
   	  #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -46,7 +46,7 @@
  
     var map = L.map('map');
 
-	var trail = L.geoJson(buckeye-trail)
+	var trail = L.geoJson('btrail')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
         }).addTo(map);
