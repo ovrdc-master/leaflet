@@ -32,6 +32,7 @@
   </style>
 </head>
 <body>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
   <div id="map"></div>
   <script>
   window.onload = function () {
@@ -46,7 +47,7 @@
  
     var map = L.map('map');
 
-	var trail = L.geoJson('btrail')
+	var trail = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
         }).addTo(map);
