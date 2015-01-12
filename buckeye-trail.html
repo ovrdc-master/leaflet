@@ -34,7 +34,7 @@
 	      position:absolute;
 	      bottom:0px;
 	      left:0px;
-	      right:0px;
+	      right:20px;
 	      z-index:999;
 	      overflow:auto;
 	      padding:5px;
@@ -84,8 +84,6 @@
 	var overlayMaps = {
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
 	};
-
-	map.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
 	L.control.layers(baseMaps).addTo(map);
 	L.control.defaultExtent().addTo(map);
