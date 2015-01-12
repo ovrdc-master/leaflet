@@ -34,6 +34,7 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
   <div id="map"></div>
   <script>
+  L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
   window.onload = function () {
     var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
 	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
@@ -44,7 +45,7 @@
     	
     });
  
-    var map = L.map('map');
+	var map = L.map('map');
 
 	var trail = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
@@ -58,7 +59,7 @@
 	};
 
 	var overlayMaps = {
-		 "Buckeye Trail": trail
+		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
 	};
 	
 	var sidebar = L.control.sidebar('sidebar').addTo(map);
