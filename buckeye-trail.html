@@ -73,6 +73,7 @@
         	map.fitBounds(runLayer.getBounds());
         }).addTo(map);
 
+	var test = LtileLayer('tiles/{z}/{x}/{y}.png').addTo(map);
 
 	var baseMaps = {
 		"Gray Basemap": OpenStreetMap_BlackAndWhite,
