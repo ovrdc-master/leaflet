@@ -25,18 +25,20 @@
 }
 
 .leaflet-control-geocoder-form input {
+	font: Roboto;
 	font-size: 16px;
 	width: 0;
 	transition: width 0.125s ease-in;
 }
 
 .leaflet-touch .leaflet-control-geocoder-form input {
+	font: Roboto;
 	font-size: 22px;
 }
 
 .leaflet-control-geocoder-icon {
-	width: 26px;
-	height: 26px;
+	width: 25px;
+	height: 2px;
 	background-image: url(images/geocoder.png);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -115,12 +117,14 @@ ul.leaflet-control-geocoder-alternatives {
 	text-decoration: none;
 	color: black;
 	padding: 6px 8px 16px 6px;
+	font: Roboto;
 	font-size: 14px;
 	line-height: 1;
 	font-weight: bold;
 }
 
 .leaflet-touch .leaflet-control-geocoder-alternatives a {
+	font: Roboto;
 	font-size: 18px;
 }
 
@@ -129,12 +133,14 @@ ul.leaflet-control-geocoder-alternatives {
 }
 
 .leaflet-control-geocoder-address-detail {
+	font: Roboto;
 	font-size: 12px;
 	font-weight: normal;
 }
 
 .leaflet-control-geocoder-address-context {
 	color: #666;
+	font: Roboto;
 	font-size: 12px;
 	font-weight: lighter;
 }
