@@ -385,6 +385,15 @@
 	
 	map.addLayer(greymap);
 	
+	var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+    	});
+    
+	 var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { 
+    	attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' 
+    	
+    	});
+	
 	var runLayer = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
@@ -394,7 +403,13 @@
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
 	};
 
-//	L.control.layers(baseMaps).addTo(map);
+	var baseMaps = {
+		"Gray Basemap": greymap,
+		"Basemap": Esri_WorldTopoMap,
+		"Imagery": Esri_WorldImagery
+	};
+
+	L.control.layers(baseMaps).addTo(map);
 	L.control.defaultExtent().addTo(map);
 	L.control.locate().addTo(map);
 //	L.easyPrint().addTo(map);
