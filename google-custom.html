@@ -55,7 +55,18 @@
   
     	var map = L.map('map');
 
-    	var googleLayer = new L.Google('ROADMAP').addTo(map);
+    	var styles = [
+	    {
+	      featureType: 'all',
+	      stylers: [{hue: '#ff0000'}]
+	    }
+	 ];
+	var ggl = new L.Google('ROADMAP', {
+		mapOptions: {
+			styles: styles
+		}
+	});
+	map.addLayer(ggl);
 	
 	var runLayer = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
