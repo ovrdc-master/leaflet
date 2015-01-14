@@ -4,36 +4,55 @@
   <meta charset="utf-8" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  
   <link rel="stylesheet" href="src/leaflet.defaultextent.css" />
-  <link rel="stylesheet" href="src/easyPrint.css" />
+
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="src/leaflet.defaultextent.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+  <!--Easy Print Plugin Does not work well -->
   <script src="src/leaflet.easyPrint.js"></script>
+  <link rel="stylesheet" href="src/easyPrint.css" />
   <script src="src/jQuery.print.js"></script>
+  
+  <!--Locate Control Plugin -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css' rel='stylesheet' />
-<!--[if lt IE 9]>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.21.0/L.Control.Locate.ie.css' rel='stylesheet' />
-<![endif]-->
+	<!--[if lt IE 9]>
+	  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.21.0/L.Control.Locate.ie.css' rel='stylesheet' />
+	<![endif]-->
+  
   <script src="src/leaflet.makimarkers.js"></script>
+  
+  <!--Awesome Marker Plugin -->
   <link rel="stylesheet" href="src/leaflet.awesome-markers.css">
   <script src="src/leaflet.awesome-markers.js"></script>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?libraries=placeskey=AIzaSyCpIjH_d3jfNPSwPuyrzy2G9H_Ylb1bEd8">
-    </script>
-  <script src="src/google.js"></script>
   
-  <link rel="stylesheet" href="src/Control.Geocoder.css" />
-  <script src="src/Control.Geocoder.js"></script>
+  <!--Google Custom Map -->
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?libraries=placeskey=AIzaSyCpIjH_d3jfNPSwPuyrzy2G9H_Ylb1bEd8">
+  </script>
+  <script src="src/google.js"></script>
+	
+	<!-- Esri Leaflet Core -->
+	<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet-core.js"></script>
+	
+	<!-- Esri Leaflet Geocoder -->
+	<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.3/esri-leaflet-geocoder.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.3/esri-leaflet-geocoder.css">
+  
+  	
+  </head>
   
 
   <style>
-  	#map { position:absolute; top:0; bottom:0; width:98%; }
+  	#map { position:absolute; top:0; bottom:0; width:100%; }
 	#legend {
 	      position:absolute;
 	      bottom:40px;
@@ -400,7 +419,7 @@
     	    	maxZoom: 22,
 		maxNativeZoom: 18
     	});
-	
+
 	var runLayer = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
@@ -420,11 +439,22 @@
 	L.control.defaultExtent().addTo(map);
 	L.control.locate().addTo(map);
 //	L.easyPrint().addTo(map);
-	L.Control.geocoder().addTo(map);
+//	L.Control.geocoder().addTo(map);
 //	L.control.search().addTo(map);
 
-	
+	// create the ESRI geocoding control and add it to the map
+     var searchControl = new L.esri.Controls.Geosearch().addTo(map);
 
+  // create an empty layer group to store the results and add it to the map
+  	var results = new L.LayerGroup().addTo(map);
+
+  // listen for the results event and add every result to the map
+      searchControl.on("results", function(data){
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+          results.addLayer(L.marker(data.results[i].latlng));
+        });
+	
 }
   </script>
   </div>
