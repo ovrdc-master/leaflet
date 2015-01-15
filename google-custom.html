@@ -432,7 +432,7 @@
 	var runLayer = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
-        }).addTo(map);
+        });
 
 	var overlayMaps = {
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
