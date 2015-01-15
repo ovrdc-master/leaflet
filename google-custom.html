@@ -432,19 +432,16 @@
 		maxNativeZoom: 18
     	});
 
-	function addTrails() {
-		var customLayer = L.geoJson(null, {
-		    // http://leafletjs.com/reference.html#geojson-style
-		    style: function(feature) {
-		        return {
-		            color: '#04B431'
-		        };
-		    }
-		});
-		var runLayer = omnivore.geojson('btrail.geojson', green, customLayer)
-			.on('ready', function() {
-        });
-	};
+	var greenLayer = L.geoJson(null, {
+	    // http://leafletjs.com/reference.html#geojson-style
+	    style: function(feature) {
+	        return {
+	            color: '#04B431'
+	        };
+	    }
+	});
+	var runLayer = omnivore.geojson('btrail.geojson');
+	layer.setStyle(greenLayer);
 
 	var overlayMaps = {
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
