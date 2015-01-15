@@ -429,7 +429,16 @@
 		maxNativeZoom: 18
     	});
 
-	var runLayer = omnivore.geojson('btrail.geojson')
+	var customLayer = L.geoJson(green, {
+	    // http://leafletjs.com/reference.html#geojson-style
+	    style: function(feature) {
+	        return {
+	            color: '#04B431'
+	        };
+	    }
+	});
+
+	var runLayer = omnivore.geojson('btrail.geojson', green, customLayer)
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
         });
