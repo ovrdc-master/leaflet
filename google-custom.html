@@ -74,7 +74,10 @@
   <script>
   window.onload = function () {
   
-    	var map = L.map('map');
+    	var map = L.map('map', {
+    		center: [39.9, -82.9],
+    		zoom: 10
+    	});
 	var style = [
 	    {
 	        "featureType": "all",
@@ -429,19 +432,19 @@
 		maxNativeZoom: 18
     	});
 
-	var customLayer = L.geoJson(green, {
-	    // http://leafletjs.com/reference.html#geojson-style
-	    style: function(feature) {
-	        return {
-	            color: '#04B431'
-	        };
-	    }
-	});
-
-	var runLayer = omnivore.geojson('btrail.geojson', green, customLayer)
-		.on('ready', function() {
-        	map.fitBounds(runLayer.getBounds());
+	function addTrails() {
+		var customLayer = L.geoJson(null, {
+		    // http://leafletjs.com/reference.html#geojson-style
+		    style: function(feature) {
+		        return {
+		            color: '#04B431'
+		        };
+		    }
+		});
+		var runLayer = omnivore.geojson('btrail.geojson', green, customLayer)
+			.on('ready', function() {
         });
+	};
 
 	var overlayMaps = {
 		 "Buckeye Trail": omnivore.geojson('btrail.geojson')
