@@ -432,14 +432,14 @@
 		maxNativeZoom: 18
     	});
 
-//	var customLayer = L.geoJson(null, {
-//	    // http://leafletjs.com/reference.html#geojson-style
-//	    style: function(feature) {
-//	        return {
-//	            color: '#04B431'
-//	        };
-//	    }
-//	});
+	var customLayer = L.geoJson(null, {
+	    // http://leafletjs.com/reference.html#geojson-style
+	    style: function(feature) {
+	        return {
+	            color: '#04B431'
+	        };
+	    }
+	    });
 
 //	var greenStyle = {
 //	    "color": "#04B431",
@@ -447,11 +447,7 @@
 //	    "opacity": 0.7
 //	};
 	
-	var runLayer = omnivore.geojson('btrail.geojson', { 
-	    style: function (feature) {
-		 return {color: #04B431};
-	  }
-	  });
+	var runLayer = omnivore.geojson('btrail.geojson', null, customLayer);
 	  
 //	layer.setStyle(greenStyle);
 
