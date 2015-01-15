@@ -432,7 +432,7 @@
 		maxNativeZoom: 18
     	});
 
-	var customLayer = L.geoJson(null, {
+	var greenLayer = L.geoJson(null, {
 	    // http://leafletjs.com/reference.html#geojson-style
 	    style: function(feature) {
 	        return {
@@ -447,12 +447,12 @@
 //	    "opacity": 0.7
 //	};
 	
-	var runLayer = omnivore.geojson('btrail.geojson', null, customLayer);
+	var runLayer = omnivore.geojson('btrail.geojson', null, greenLayer);
 	  
 //	layer.setStyle(greenStyle);
 
 	var overlayMaps = {
-		 "Buckeye Trail": omnivore.geojson('btrail.geojson', null, customLayer)
+		 "Buckeye Trail": omnivore.geojson('btrail.geojson', null, greenLayer)
 	};
 
 	var baseMaps = {
