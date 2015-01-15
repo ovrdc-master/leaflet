@@ -1,4 +1,4 @@
-var greymap = [
+[
 	    {
 	        "featureType": "all",
 	        "elementType": "all",
@@ -317,4 +317,4 @@ var greymap = [
 	            }
 	        ]
 	    }
-	];
+	]
