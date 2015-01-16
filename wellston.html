@@ -473,7 +473,7 @@
 //	layer.setStyle(greenStyle);
 
 	var overlayMaps = {
-		 "Water Mains": omnivore.geojson('w_wmains.geojson', null, blueLayer) 
+		 "Water Mains": omnivore.geojson('w_wmains.geojson', null, blueLayer) {
 		 	.on('ready', function() {
 	        	// After the 'ready' event fires, the GeoJSON contents are accessible
 	        	// and you can iterate through layers to bind custom popups.
@@ -481,6 +481,7 @@
 	            	layer.bindPopup(layer.feature.properties.Diameter);
 	        	});
 	    	});
+		}
 		
 };
 
