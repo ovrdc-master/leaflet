@@ -1,7 +1,7 @@
 L.Control.Social = L.Control.extend({
   includes: L.Mixin.Events,
   options: {
-    position: 'bottomleft',
+    position: 'topright',
     default_text: "What a nice map",
     links: [
       ['facebook', "Facebook", "https://www.facebook.com/sharer.php?u=_url_&t=_text_"],
