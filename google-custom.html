@@ -64,7 +64,11 @@
 		background-color: #F8F8F8;
   		
   	}
-  	
+  	#share {
+  		position:fixed;
+  		top: 17px;
+  		right: 10px;
+  	}	
   	#map { position:fixed; top:80px; bottom:0; left:0; right:0;}
 			
 	#legend {
@@ -505,6 +509,14 @@
   	<div id="ovrdc">
 	  	<a href="//www.ovrdc.org"><img src="http://www.googledrive.com/host/0BxoaXnkdoCcyNndfb191dVowMTA/weblogo.png" width="500" height="auto"></a>
 	</div>
+    	<div>
+    		<ul class="share-buttons">
+			<li><a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=#url">Share</a><i class="fa fa-facebook-square fa-2x"></i></a></li>
+			<li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fovrdc.github.io%2Fleaflet%2Fsocial.html&text=Test:%20http%3A%2F%2Fovrdc.github.io%2Fleaflet%2Fsocial.html" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+			<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fovrdc.github.io%2Fleaflet%2Fsocial.html" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+			<li><a href="mailto:?subject=Test&body=test:%20http%3A%2F%2Fovrdc.github.io%2Fleaflet%2Fsocial.html" target="_blank" title="Email"><i class="fa fa-envelope fa-2x"></i></a></li>
+		</ul>
+    	</div>
     	<div id="legend">
   		<img src="trails-legend.png" alt="trails" style="width:100px">
 	</div>
