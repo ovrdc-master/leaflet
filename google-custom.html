@@ -31,6 +31,10 @@
   <!--Awesome Marker Plugin -->
   <link rel="stylesheet" href="src/leaflet.awesome-markers.css">
   <script src="src/leaflet.awesome-markers.js"></script>
+
+<script src="src/leaflet.hash.js"></script>
+<link rel="stylesheet" href="src/leaflet.social.css">
+<script src="src/leaflet.social.js"></script>
   
   <!--Google Custom Map -->
   <script type="text/javascript"
@@ -485,6 +489,7 @@
         };
       });
      
+    L.control.social({default_text: "An OVRDC  Map"}).addTo(map);
 }
   </script>
   </div>
