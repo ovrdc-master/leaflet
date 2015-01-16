@@ -453,19 +453,10 @@
 	    }
 	    });
 
-	var runLayer = omnivore.geojson('w_wmains.geojson', null, blueLayer)
-	.on('ready', function() {
-	        // After the 'ready' event fires, the GeoJSON contents are accessible
-	        // and you can iterate through layers to bind custom popups.
-	        runLayer.eachLayer(function(layer) {
-	            // See the `.bindPopup` documentation for full details. This
-	            // dataset has a property called `name`: your dataset might not,
-	            // so inspect it and customize to taste.
-	            layer.bindPopup(layer.feature.properties.Diameter);
-	        });
-	    });
-
-
+	var runLayer = omnivore.geojson('w_wmains.geojson', null, blueLayer) {
+		layer.bindPopup(layer.feature.properties.Diameter);
+	        };
+	        
 //	var runLayer = omnivore.geojson('w_wfeatures.geojson', {
 //		attribution: 'Data by OVRDC 2015'
 //	});
