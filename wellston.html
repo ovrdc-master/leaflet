@@ -454,8 +454,10 @@
 	    });
 
 	var runLayer = omnivore.geojson('w_wmains.geojson', null, blueLayer) {
-		layer.bindPopup(layer.feature.properties.Diameter);
-	        };
+                onEachFeature: function (feature, layer) {
+                layer.bindLabel(feature.properties.Diameter);
+        }
+});
 	        
 //	var runLayer = omnivore.geojson('w_wfeatures.geojson', {
 //		attribution: 'Data by OVRDC 2015'
