@@ -467,7 +467,7 @@
 //	L.easyPrint().addTo(map);
 //	L.Control.geocoder().addTo(map);
 //	L.control.search().addTo(map);
-      	L.control.layers(baseMaps, overlayMaps).addTo(map);
+      	L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 
 	// create the ESRI geocoding control and add it to the map
      var searchControl = new L.esri.Controls.Geosearch({
