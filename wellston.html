@@ -453,11 +453,11 @@
 	    }
 	    });
 
-	var runLayer = omnivore.geojson(('w_wmains.geojson', null, blueLayer) {
-                onEachFeature: function (feature, layer) {
-                layer.bindLabel(feature.properties.Diameter);
-        }
-});
+//	var runLayer = omnivore.geojson(('w_wmains.geojson', null, blueLayer) {
+//                onEachFeature: function (feature, layer) {
+//                layer.bindLabel(feature.properties.Diameter);
+//        }
+//});
 	        
 //	var runLayer = omnivore.geojson('w_wfeatures.geojson', {
 //		attribution: 'Data by OVRDC 2015'
@@ -465,8 +465,12 @@
 	  
 //	layer.setStyle(greenStyle);
 
+	var featureLayer = L.mapbox.featureLayer()
+	    .loadURL('w_wmains.geojson')
+	    .addTo(map);
+
 	var overlayMaps = {
-		 "Water Mains": runLayer
+		 "Water Mains": featureLayer
 		};
 
 	var baseMaps = {
