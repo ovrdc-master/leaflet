@@ -473,7 +473,6 @@
 		"Imagery": Esri_WorldImagery
 	};
 
-        L.control.social({default_text: "An OVRDC Map"}).addTo(map);
 	L.control.defaultExtent().addTo(map);
 	L.control.locate().addTo(map);
 	L.control.fullscreen().addTo(map);
@@ -504,6 +503,7 @@
     </div>
   	<div id="ovrdc">
 	  	<a href="//www.ovrdc.org"><img src="http://www.googledrive.com/host/0BxoaXnkdoCcyNndfb191dVowMTA/weblogo.png" width="500" height="auto"></a>
+	  	L.control.social({default_text: "An OVRDC Map"}).addTo(map);
 	</div>
     	<div id="legend">
   		<img src="trails-legend.png" alt="trails" style="width:100px">
