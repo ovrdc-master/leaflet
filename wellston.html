@@ -467,16 +467,27 @@
 	  
 //	layer.setStyle(greenStyle);
 
-	function onEachFeature(feature, layer) {
-	    // does this feature have a property named popupContent?
-	    if (feature.properties && feature.properties.Diameter) {
-	        layer.bindPopup(feature.properties.Diameter);
-	    }
-	};
+//	function onEachFeature(feature, layer) {
+//	    // does this feature have a property named popupContent?
+//	    if (feature.properties && feature.properties.Diameter) {
+//	        layer.bindPopup(feature.properties.Diameter);
+//	    }
+//	};
 
 	var wmainLayer = L.mapbox.featureLayer()
 	    .loadURL('w_wmains.geojson')
 	    .addTo(map);
+// Note that calling `.eachLayer` here depends on setting GeoJSON _directly_
+// above. If you're loading GeoJSON asynchronously, like from CSV or from a file,
+// you will need to do this within a `featureLayer.on('ready'` event.
+	featureLayer.eachLayer(function(layer) {
+// here you call `bindPopup` with a string of HTML you create - the feature
+// properties declared above are available under `layer.feature.properties`
+	    var content = '<h2>Water Main<\/h2>' +
+	        '<p>Diameter:' + layer.feature.properties.Diameter + '<br \/>' +
+	        'Plan: ' + layer.feature.properties.Source + '<\/p>';
+	    layer.bindPopup(content);
+	});
 
 	var overlayMaps = {
 		 "Water Mains": wmainLayer
