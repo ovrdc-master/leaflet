@@ -467,12 +467,12 @@
 	  
 //	layer.setStyle(greenStyle);
 
-	var featureLayer = L.mapbox.featureLayer()
+	var wmainLayer = L.mapbox.featureLayer()
 	    .loadURL('w_wmains.geojson')
 	    .addTo(map);
 
 	var overlayMaps = {
-		 "Water Mains": featureLayer
+		 "Water Mains": wmainLayer
 		};
 
 	var baseMaps = {
