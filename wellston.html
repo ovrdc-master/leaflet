@@ -467,6 +467,11 @@
 	  
 //	layer.setStyle(greenStyle);
 
+	function onEachFeature(feature, layer) {
+	    // does this feature have a property named popupContent?
+	    if (feature.properties && feature.properties.Diameter) {
+	        layer.bindPopup(feature.properties.Diameter);
+
 	var wmainLayer = L.mapbox.featureLayer()
 	    .loadURL('w_wmains.geojson')
 	    .addTo(map);
