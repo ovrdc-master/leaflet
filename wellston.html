@@ -474,14 +474,14 @@
 //	    }
 //	};
 
-	var wmainLayer = L.mapbox.featureLayer()
+	var featureLayer = L.mapbox.featureLayer()
 	    .loadURL('w_wmains.geojson')
 	    .on('ready', function() {
 		layer.bindPopup(layer.feature.properties.Diameter);
     	}).addTo(map);
 
 	var overlayMaps = {
-		 "Water Mains": wmainLayer
+		 "Water Mains": featureLayer
 		};
 
 	var baseMaps = {
