@@ -52,15 +52,13 @@ var runLayer = omnivore.geojson('w_wmains.geojson')
 		maxNativeZoom: 18
     	});
 
-  var overlayMaps = {
-		 "Water Mains": runLayer
-		};
-	var baseMaps = {
-		"Basemap": Esri_WorldTopoMap,
-		"Imagery": Esri_WorldImagery
-	};
-  
-  L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
+L.control.layers({
+    'Base Map': Esri_WorldTopoMap,
+    'Imagery': Esri_WorldImagery
+}, {
+    'Park Boundaries': omnivore.geojson('parks.geojson'),
+    'Mains': runLayer
+}).addTo(map);
 
 </script>
 </body>
