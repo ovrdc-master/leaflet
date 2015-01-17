@@ -478,7 +478,7 @@
 	    .loadURL('w_wmains.geojson')
 	    .on('ready', function() {
 		layer.bindPopup(layer.feature.properties.Diameter);
-    	});.addTo(map);
+    	}).addTo(map);
 
 	var overlayMaps = {
 		 "Water Mains": wmainLayer
