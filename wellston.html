@@ -455,15 +455,18 @@
 	    }
 	    });
 
-//	var runLayer = omnivore.geojson(('w_wmains.geojson', null, blueLayer) {
-//                onEachFeature: function (feature, layer) {
-//                layer.bindLabel(feature.properties.Diameter);
-//        }
-//});
-	        
-//	var runLayer = omnivore.geojson('w_wfeatures.geojson', {
-//		attribution: 'Data by OVRDC 2015'
-//	});
+var wmainLayer = omnivore.geojson('w_wmains.geojson')
+    .on('ready', function() {
+        map.fitBounds(wmainLayer.getBounds());
+        // After the 'ready' event fires, the GeoJSON contents are accessible
+        // and you can iterate through layers to bind custom popups.
+        wmainLayer.eachLayer(function(layer) {
+            // See the `.bindPopup` documentation for full details. This
+            // dataset has a property called `name`: your dataset might not,
+            // so inspect it and customize to taste.
+        layer.bindPopup(layer.feature.properties.Diameter);
+        });
+    }).addTo(map);
 	  
 //	layer.setStyle(greenStyle);
 
@@ -474,14 +477,14 @@
 //	    }
 //	};
 
-	var featureLayer = L.mapbox.featureLayer()
-	    .loadURL('w_wmains.geojson')
-	    .on('ready', function() {
-		layer.bindPopup(layer.feature.properties.Diameter);
-    	}).addTo(map);
+//	var featureLayer = L.mapbox.featureLayer()
+//	    .loadURL('w_wmains.geojson')
+//	    .on('ready', function() {
+//		layer.bindPopup(layer.feature.properties.Diameter);
+//  	}).addTo(map);
 
 	var overlayMaps = {
-		 "Water Mains": featureLayer
+		 "Water Mains": wmainLayer
 		};
 
 	var baseMaps = {
