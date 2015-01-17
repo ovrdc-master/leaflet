@@ -450,12 +450,12 @@
 	    // http://leafletjs.com/reference.html#geojson-style
 	    style: function(feature) {
 	        return {
-	            color: '#0000FF'
+	            color: '#008000'
 	        };
 	    }
 	    });
 
-var wmainLayer = omnivore.geojson('w_wmains.geojson')
+var wmainLayer = omnivore.geojson('w_wmains.geojson', null, blueLayer)
     .on('ready', function() {
         map.fitBounds(wmainLayer.getBounds());
         // After the 'ready' event fires, the GeoJSON contents are accessible
@@ -500,7 +500,7 @@ var wmainLayer = omnivore.geojson('w_wmains.geojson')
 //	L.easyPrint().addTo(map);
 //	L.Control.geocoder().addTo(map);
 //	L.control.search().addTo(map);
-      	L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
+      	L.control.layers(baseMaps, {collapsed:false}).addTo(map);
 
 	// create the ESRI geocoding control and add it to the map
      var searchControl = new L.esri.Controls.Geosearch({
