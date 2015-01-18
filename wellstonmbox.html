@@ -35,7 +35,7 @@ var runLayer = omnivore.geojson('w_wmains.geojson')
             // See the `.bindPopup` documentation for full details. This
             // dataset has a property called `name`: your dataset might not,
             // so inspect it and customize to taste.
-            layer.bindPopup(layer.feature.properties.Diameter);
+            layer.bindPopup(layer.feature.id.properties.Diameter);
         });
     })
     .addTo(map);
