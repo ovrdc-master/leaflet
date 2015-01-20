@@ -38,6 +38,8 @@
   
   <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.css" />
   <script src="src/leaflet.groupedlayercontrol.js"></script>
+  
+  <script src"https://raw.githubusercontent.com/yohanboniface/Leaflet.Editable/gh-pages/src/Leaflet.Editable.js"></script>
 
   <style>
   	  #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -103,7 +105,8 @@
     var map = L.map('map', {center: [38.809365, -83.517054],
 			zoom: 10,
 			layers: [Esri_WorldTopoMap],
-			defaultExtentControl: true
+			defaultExtentControl: true,
+			editable: true
 		});
 	
 	function popup(feature, layer) {
@@ -135,6 +138,8 @@
 	//	}
 		onEachFeature: popup
 	}).addTo(map);
+	
+	qbarns.enableEdit();
 
 	var otherpoi = L.geoJson(poi,{
 		 filter: function(feature, layer) {
