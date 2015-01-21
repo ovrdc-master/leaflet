@@ -99,7 +99,7 @@ map.on('click', function(e) {
         var popLocation= e.latlng;
         var popup = L.popup()
         .setLatLng(popLocation)
-        .setContent('<a href="' + 'https://docs.google.com/forms/d/14GeNLfqzgvs8Q0THbb4N-UwWgqofwPPnhOMYRXWIw6s/viewform?entry.39165583&entry.674346904=' + e.latlng.lat + '">' + 'Submit Work Order' + '</a>')
+        .setContent('<iframe src="' + 'https://docs.google.com/forms/d/14GeNLfqzgvs8Q0THbb4N-UwWgqofwPPnhOMYRXWIw6s/viewform?entry.39165583&entry.674346904=' + e.latlng.lat + '"' + 'width="380" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen'+ '>' + 'Submit Work Order' + '</iframe>')
         .openOn(map);        
     });
 
