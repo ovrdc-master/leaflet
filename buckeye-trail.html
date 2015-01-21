@@ -66,7 +66,7 @@
 	var runLayer = omnivore.geojson('btrail.geojson')
 		.on('ready', function() {
         	map.fitBounds(runLayer.getBounds());
-        }).addTo(map);
+        });
 
 	var test = L.tileLayer('tiles/{z}/{x}/{y}.png', {
 		zIndex: 1,
@@ -92,6 +92,8 @@
 	L.easyPrint().addTo(map);
 	L.Control.geocoder().addTo(map);
 //	L.control.search().addTo(map);
+
+	map.on('click', function(e) { alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng) });
 
 	
 
