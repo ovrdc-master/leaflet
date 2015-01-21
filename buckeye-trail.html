@@ -99,7 +99,7 @@ map.on('click', function(e) {
         var popLocation= e.latlng;
         var popup = L.popup()
         .setLatLng(popLocation)
-        .setContent('<a href="https://docs.google.com/forms/d/14GeNLfqzgvs8Q0THbb4N-UwWgqofwPPnhOMYRXWIw6s/viewform?entry.39165583&entry.674346904=" + e.latlng.toString()>Submit Work Order</a>')
+        .setContent('<a href="https://docs.google.com/forms/d/14GeNLfqzgvs8Q0THbb4N-UwWgqofwPPnhOMYRXWIw6s/viewform?entry.39165583&entry.674346904= + e.latlng.toString()">Submit Work Order</a>')
         .openOn(map);        
     });
 
